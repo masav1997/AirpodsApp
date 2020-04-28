@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Dimensions, SafeAreaView, ImageBackground, Image, TouchableOpacity} from 'react-native';
+import { View, Dimensions, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import Header from '../components/Header';
@@ -17,29 +17,38 @@ export default class NonConnection extends React.Component {
 	};
 	render() {
 		return (
-			<View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#F1F1F1' }}>
-				<ImageBackground
-					source={require('../assets/icons/bg.png')}
-					resizeMode={'cover'}
-					style={{
-						height: '100%',
-						width: width,
-						alignItems: 'center',
-					}}
-				>
-					<SafeAreaView>
-						<Header
-							onPress={() => {
-								this.props.navigation.navigate('MainPage');
+			<View
+				style={{
+					flex: 1,
+					flexDirection: 'column',
+					backgroundColor: '#FFFF',
+					height: '100%',
+					width: width,
+					alignItems: 'center',
+				}}
+			>
+				<SafeAreaView>
+					<Header
+						onPress={() => {
+							this.props.navigation.navigate('MainPage');
+						}}
+						img={require('../assets/icons/close.png')}
+						imgStyle={{ width: 14, height: 14 }}
+						onPressAbout={() => {
+							this.setState({ isAbout: !this.state.isAbout });
+						}}
+					/>
+					<ScrollView showsVerticalScrollIndicator={false}>
+						<ImageBackground
+							source={require('../assets/icons/bg.png')}
+							resizeMode={'cover'}
+							style={{
+								height: 'auto',
+								width: width,
+								alignItems: 'center',
 							}}
-							img={require('../assets/icons/close.png')}
-							imgStyle={{ width: 14, height: 14 }}
-							onPressAbout={() => {
-								this.setState({ isAbout: !this.state.isAbout });
-							}}
-						/>
-						<ScrollView>
-						{this.state.isAbout ? <PodsBlock /> : <NonConnectBlock />}
+						>
+							{this.state.isAbout ? <PodsBlock /> : <NonConnectBlock />}
 							<View
 								style={{
 									flexDirection: 'row',
@@ -75,10 +84,10 @@ export default class NonConnection extends React.Component {
 									)}
 								</TouchableOpacity>
 							</View>
-							{this.state.isPlus ? <DeviceBlock /> : <SettingsBlock />}
-						</ScrollView>
-					</SafeAreaView>
-				</ImageBackground>
+						</ImageBackground>
+						{this.state.isPlus ? <DeviceBlock /> : <SettingsBlock />}
+					</ScrollView>
+				</SafeAreaView>
 			</View>
 		);
 	}

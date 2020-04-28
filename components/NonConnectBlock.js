@@ -17,7 +17,7 @@ export default class NonConnectBlock extends React.Component {
 				}}
 			>
 				<ImageBackground
-					style={{ alignItems: 'center', justifyContent: 'center', width: 300, height: 300 }}
+					style={{ alignItems: 'center', justifyContent: 'center', width: 250, height: 250 }}
 					source={require('../assets/icons/ellipse.png')}
 				>
 					<Text style={{fontSize:12, fontWeight: 'bold'}}>НЕ ПОДКЛЮЧЕНО</Text>

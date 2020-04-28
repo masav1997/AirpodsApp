@@ -19,7 +19,7 @@ export default class PodsBlock extends React.Component {
 				>
 					<View style={{ alignItems: 'center', justifyContent: 'center' }}>
 						<Image
-							style={{ width: 148, height: 226 }}
+							style={{ width: 98, height: 176 }}
 							source={require('../assets/icons/pods1.png')}
 						></Image>
 					</View>

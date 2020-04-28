@@ -56,7 +56,7 @@ export default class ConnectBlock extends React.Component {
 						</View>
 					</View>
 					<View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
-						<Image style={{ width: 241, height: 227 }} source={require('../assets/icons/pods.png')}></Image>
+						<Image style={{ width: 191, height: 177 }} source={require('../assets/icons/pods.png')}></Image>
 					</View>
 					<View
 						style={{

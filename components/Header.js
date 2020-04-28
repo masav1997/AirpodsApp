@@ -17,6 +17,7 @@ export default class Header extends React.Component {
 			paddingHorizontal: 30,
 			paddingTop: 20,
 			paddingBottom: 10,
+			backgroundColor: '#F1F1F1'
 		};
 		const leftStyle = {
 			flex: 1,

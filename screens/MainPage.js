@@ -8,7 +8,7 @@ import PodsBlock from '../components/PodsBlock';
 import SettingsBlock from '../components/SettingsBlock';
 import DeviceBlock from '../components/DeviceBlock';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export default class MainPage extends React.Component {
 	state = {
@@ -17,32 +17,41 @@ export default class MainPage extends React.Component {
 	};
 	render() {
 		return (
-			<View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#F1F1F1' }}>
-				<ImageBackground
-					source={require('../assets/icons/bg.png')}
-					resizeMode={'cover'}
-					style={{
-						height: '100%',
-						width: width,
-						alignItems: 'center',
-					}}
-				>
-					<SafeAreaView>
-						<Header
-							onPress={() => {
-								this.props.navigation.navigate('NonConnection');
+			<View
+				style={{
+					flex: 1,
+					flexDirection: 'column',
+					backgroundColor: '#FFFF',
+					height: '100%',
+					width: width,
+					alignItems: 'center',
+				}}
+			>
+				<SafeAreaView>
+					<Header
+						onPress={() => {
+							this.props.navigation.navigate('NonConnection');
+						}}
+						img={
+							this.state.isAbout
+								? require('../assets/icons/close.png')
+								: require('../assets/icons/done.png')
+						}
+						imgStyle={this.state.isAbout ? { width: 14, height: 14 } : { width: 17, height: 11 }}
+						onPressAbout={() => {
+							this.setState({ isAbout: !this.state.isAbout });
+						}}
+					/>
+					<ScrollView showsVerticalScrollIndicator={false}>
+						<ImageBackground
+							source={require('../assets/icons/bg.png')}
+							resizeMode={'cover'}
+							style={{
+								height: 'auto',
+								width: width,
+								alignItems: 'center',
 							}}
-							img={
-								this.state.isAbout
-									? require('../assets/icons/close.png')
-									: require('../assets/icons/done.png')
-							}
-							imgStyle={this.state.isAbout ? { width: 14, height: 14 } : { width: 17, height: 11 }}
-							onPressAbout={() => {
-								this.setState({ isAbout: !this.state.isAbout });
-							}}
-						/>
-						<ScrollView>
+						>
 							{this.state.isAbout ? <PodsBlock /> : <ConnectBlock />}
 							<View
 								style={{
@@ -79,10 +88,10 @@ export default class MainPage extends React.Component {
 									)}
 								</TouchableOpacity>
 							</View>
-							{this.state.isPlus ? <DeviceBlock /> : <SettingsBlock />}
-						</ScrollView>
-					</SafeAreaView>
-				</ImageBackground>
+						</ImageBackground>
+						{this.state.isPlus ? <DeviceBlock /> : <SettingsBlock />}
+					</ScrollView>
+				</SafeAreaView>
 			</View>
 		);
 	}

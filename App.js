@@ -38,7 +38,7 @@ export default class App extends React.Component {
 		}
 		return (
 			<NavigationContainer>
-				<StatusBar barStyle="black" backgroundColor="#f1f1f1" />
+				<StatusBar barStyle="dark" backgroundColor="#f1f1f1" />
 				<Stack.Navigator
 					screenOptions={{
 						headerShown: false,

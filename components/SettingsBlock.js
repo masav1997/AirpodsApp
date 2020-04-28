@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Dimensions, Text, TouchableOpacity, Switch } from 'react-native';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export default class SettingsBlock extends React.Component {
 	state = { switchValue: false, switchValue1: false, switchValue2: false };
@@ -16,14 +16,14 @@ export default class SettingsBlock extends React.Component {
 	};
 	render() {
 		return (
-			<View style={{ paddingBottom: 15, paddingTop: 15 }}>
+			<View style={{ paddingBottom: 15, paddingTop: 15, backgroundColor:'#FFF', }}>
 				<View
 					style={{
 						flexDirection: 'row',
 						width: width,
 						height: 'auto',
-						justifyContent: 'center',
-						alignItems: 'center',
+						justifyContent: 'flex-start',
+						alignItems: 'flex-start',
 						paddingHorizontal: 30,
 					}}
 				>
