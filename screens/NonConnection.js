@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, Dimensions, SafeAreaView, Text, ImageBackground, Image, TouchableOpacity, Switch } from 'react-native';
+import { View, Dimensions, SafeAreaView, ImageBackground, Image, TouchableOpacity} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import Header from '../components/Header';
 import NonConnectBlock from '../components/NonConnectBlock';
 import SettingsBlock from '../components/SettingsBlock';
+import DeviceBlock from '../components/DeviceBlock';
+import PodsBlock from '../components/PodsBlock';
 
 const { width } = Dimensions.get('window');
 
 export default class NonConnection extends React.Component {
+	state = {
+		isAbout: false,
+		isPlus: false,
+	};
 	render() {
 		return (
 			<View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#F1F1F1' }}>
@@ -24,13 +30,16 @@ export default class NonConnection extends React.Component {
 					<SafeAreaView>
 						<Header
 							onPress={() => {
-								this.props.navigation.navigate('NonConnection');
+								this.props.navigation.navigate('MainPage');
 							}}
 							img={require('../assets/icons/close.png')}
 							imgStyle={{ width: 14, height: 14 }}
+							onPressAbout={() => {
+								this.setState({ isAbout: !this.state.isAbout });
+							}}
 						/>
 						<ScrollView>
-							<NonConnectBlock />
+						{this.state.isAbout ? <PodsBlock /> : <NonConnectBlock />}
 							<View
 								style={{
 									flexDirection: 'row',
@@ -49,14 +58,24 @@ export default class NonConnection extends React.Component {
 										justifyContent: 'flex-start',
 										alignItems: 'flex-start',
 									}}
+									onPress={() => {
+										this.setState({ isPlus: !this.state.isPlus });
+									}}
 								>
-									<Image
-										source={require('../assets/icons/plus.png')}
-										style={{ width: 87, height: 87, alignItems: 'flex-start', right: 30 }}
-									/>
+									{this.state.isPlus ? (
+										<Image
+											source={require('../assets/icons/plusActive.png')}
+											style={{ width: 87, height: 87, alignItems: 'flex-start', right: 30 }}
+										/>
+									) : (
+										<Image
+											source={require('../assets/icons/plus.png')}
+											style={{ width: 87, height: 87, alignItems: 'flex-start', right: 30 }}
+										/>
+									)}
 								</TouchableOpacity>
 							</View>
-							<SettingsBlock />
+							{this.state.isPlus ? <DeviceBlock /> : <SettingsBlock />}
 						</ScrollView>
 					</SafeAreaView>
 				</ImageBackground>

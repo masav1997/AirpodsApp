@@ -2,8 +2,11 @@ import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 
 export default class Header extends React.Component {
+	state = {
+		isAbout: false,
+	};
 	render() {
-		const { onPress, img, imgStyle } = this.props;
+		const { onPress, img, imgStyle, onPressAbout, onPressBuy } = this.props;
 
 		const headerStyle = {
 			flexDirection: 'row',
@@ -58,7 +61,7 @@ export default class Header extends React.Component {
 
 		return (
 			<View style={headerStyle}>
-				<TouchableOpacity style={leftStyle}>
+				<TouchableOpacity style={leftStyle} onPress={onPressBuy}>
 					<View style={leftButton}>
 						<Image source={require('../assets/icons/buy.png')} style={{ width: 16, height: 16 }} />
 					</View>
@@ -70,8 +73,14 @@ export default class Header extends React.Component {
 						</View>
 					</TouchableOpacity>
 				</View>
-				<TouchableOpacity style={rightStyle}>
-					<Image source={require('../assets/icons/info.png')} style={rightButton}></Image>
+				<TouchableOpacity
+					style={rightStyle}
+					onPress={onPressAbout}
+					onPressIn={() => {
+						this.setState({ isAbout: !this.state.isAbout });
+					}}
+				>
+					{this.state.isAbout ? <Image source={require('../assets/icons/helpActive.png')} style={rightButton}/> : <Image source={require('../assets/icons/info.png')} style={rightButton}/>}
 				</TouchableOpacity>
 			</View>
 		);

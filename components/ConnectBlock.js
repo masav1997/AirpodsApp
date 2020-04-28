@@ -33,7 +33,7 @@ export default class ConnectBlock extends React.Component {
 							top: '10%',
 						}}
 					>
-						<Text style={{ fontWeight: 'bold', fontSize: 9, textAlign: 'center' }}>95%</Text>
+						<Text style={{ fontWeight: 'bold', fontSize: 9, textAlign: 'center'}}>95%</Text>
 						<View
 							style={{
 								width: 32,
@@ -67,7 +67,7 @@ export default class ConnectBlock extends React.Component {
 							top: '10%',
 						}}
 					>
-						<Text style={{ fontWeight: 'bold', fontSize: 9, textAlign: 'center' }}>96%</Text>
+						<Text style={{ fontWeight: 'bold', fontSize: 9, textAlign: 'center'}}>96%</Text>
 						<View
 							style={{
 								width: 32,

@@ -35,7 +35,7 @@ export default class SettingsBlock extends React.Component {
 							alignItems: 'flex-start',
 						}}
 					>
-						<Text style={{ fontSize: 16, fontWeight: 'bold' }}>НАСТРОЙКИ</Text>
+						<Text style={{ fontSize: 16, fontWeight: 'bold', letterSpacing: 0.2 }}>НАСТРОЙКИ</Text>
 					</View>
 				</View>
 
