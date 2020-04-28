@@ -1,19 +1,55 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { AppLoading } from "expo";
+import { Asset } from "expo-asset";
 
-export default function App() {
+import MainPage from './screens/MainPage'
+import NonConnection from './screens/NonConnection';
+
+
+const Stack = createStackNavigator();
+
+const images = [
+];
+
+export default class App extends React.Component {
+  state = {
+    isLoadingComplete: false
+  };
+
+  handleResourcesAsync = async () => {
+    const cacheImages = images.map(image => {
+      return Asset.fromModule(image).downloadAsync();
+    });
+
+    return Promise.all(cacheImages);
+  };
+
+  render(){
+    if (!this.state.isLoadingComplete) {
+      return (
+        <AppLoading
+          startAsync={this.handleResourcesAsync}
+          onError={error => console.warn(error)}
+          onFinish={() => this.setState({ isLoadingComplete: true })}
+        />
+      );
+    }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+      <NavigationContainer>
+        <StatusBar barStyle="dark" backgroundColor="#9A9CA5" />
+        
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="MainPage" component={MainPage} />
+          <Stack.Screen name="NonConnection" component={NonConnection} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+}
