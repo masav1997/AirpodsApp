@@ -1282,11 +1282,6 @@
     lodash "^4.5.0"
     prop-types "^15.6.1"
 
-"@use-expo/font@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@use-expo/font/-/font-2.0.0.tgz#09b56d626e5b0c83cd0116f5bb69ad6d612d677f"
-  integrity sha512-oOJ2uaRyZNQg7PnQviz7nBcdrRL38zxScab4ktgtI4asa6G0dHW9wg307uJJmn0sHS04Yqtw+m0EOjDcGw3iWg==
-
 abort-controller@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
@@ -4445,14 +4440,6 @@ react-native-iphone-x-helper@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
 
-react-native-neomorph-shadows@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-neomorph-shadows/-/react-native-neomorph-shadows-1.0.3.tgz#32df43219662fe8c66e062301768ba4abb38cfdb"
-  integrity sha512-cqXBq73uPHuLpl5cDOu7crWqiER0jWpG+4Gtnc23HRxJGT2DXfK5VJ1zYHsh1rEbEFML7o6+4lf62lmfBs7jcA==
-  dependencies:
-    "@react-native-community/art" "^1.2.0"
-    prop-types "^15.7.2"
-
 react-native-reanimated@~1.7.0:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.1.tgz#6363c7f3ebbabc56a05d5dccaf09d95f3b6a2d69"
@@ -4472,20 +4459,6 @@ react-native-screens@~2.2.0:
   dependencies:
     debounce "^1.2.0"
 
-react-native-svg-image@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-svg-image/-/react-native-svg-image-2.0.1.tgz#4737aca1115c3011847ee178e7249e12fe7eec55"
-  integrity sha1-RzesoRFcMBGEfuF45ySeEv5+7FU=
-  dependencies:
-    prop-types "^15.6.0"
-
-react-native-svg-uri@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/react-native-svg-uri/-/react-native-svg-uri-1.2.3.tgz#2f67f30564068a0fee68a751845332a5185a1aab"
-  integrity sha1-L2fzBWQGig/uaKdRhFMypRhaGqs=
-  dependencies:
-    xmldom "^0.1.22"
-
 react-native-svg@11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-11.0.1.tgz#e92e7e9f9cb2604333fd5014fd4edcf62fea6496"
@@ -4498,11 +4471,6 @@ react-native-view-shot@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-3.1.2.tgz#8c8e84c67a4bc8b603e697dbbd59dbc9b4f84825"
   integrity sha512-9u9fPtp6a52UMoZ/UCPrCjKZk8tnkI9To0Eh6yYnLKFEGkRZ7Chm6DqwDJbYJHeZrheCCopaD5oEOnRqhF4L2Q==
-
-react-native-waveview@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-waveview/-/react-native-waveview-1.1.0.tgz#7a791545d08bd0baadd66f8d8c7d3b55dcc572fe"
-  integrity sha512-TkYkWlfjutYfsLSIbeRtJbLVAHMpkkvhIfyWF3K7O1jocoBa94qXSdcv1bb0owWvBtUyEE9ODaVBnX5CJZezdQ==
 
 react-native-web@~0.11.7:
   version "0.11.7"
@@ -5601,7 +5569,7 @@ xmldoc@^1.1.2:
   dependencies:
     sax "^1.2.1"
 
-xmldom@0.1.x, xmldom@^0.1.22:
+xmldom@0.1.x:
   version "0.1.31"
   resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.31.tgz#b76c9a1bd9f0a9737e5a72dc37231cf38375e2ff"
   integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==
@@ -5617,9 +5585,9 @@ xtend@~4.0.1:
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0":
   version "4.0.0"
